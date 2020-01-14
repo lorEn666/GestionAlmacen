@@ -35,7 +35,6 @@ public final class BebidaAzucarada extends Producto {
 		} else {
 			return super.getPrecio();
 		}
-
 	}
 
 	@Override

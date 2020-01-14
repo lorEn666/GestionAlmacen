@@ -5,24 +5,23 @@ import herencia.Producto;
 
 public class Main {
 
-	
-
 	public static void main(String[] args) {
 
 		int opc = 0;
-
+		Almacen estante = new Almacen();
+		
 		do {
 			try {
 				switch (opc = Menu.menu()) {
 				case 1:
-					Almacen.calculaPrecioDeTodasLasBebidas();
+					estante.calculaPrecioDeTodasLasBebidas();
 					break;
 				case 2:
 					break;
 				case 3:
 					break;
 				case 4:
-					Almacen.agregarProducto();
+					estante.agregarProducto();
 					break;
 				case 5:
 					break;
@@ -30,8 +29,6 @@ public class Main {
 					break;
 				case 7:
 					System.exit(0);
-				default:
-					break;
 				}
 			} catch (Exception e) {
 				System.err.println("Inserte un dato válido.");
