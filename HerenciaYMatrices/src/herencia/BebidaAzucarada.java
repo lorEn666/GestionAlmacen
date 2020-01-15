@@ -2,17 +2,17 @@ package herencia;
 
 public final class BebidaAzucarada extends Producto {
 
-	private int porcentajeAzucar;
+	private double porcentajeAzucar;
 	private boolean promocion;
 
 	public BebidaAzucarada(String nombre, String identificador, double litros, double precio, String marca,
-			int porcentajeAzucar, boolean promocion) {
+			double porcentajeAzucar, boolean promocion) {
 		super(nombre, identificador, litros, precio, marca);
 		this.porcentajeAzucar = porcentajeAzucar;
 		this.promocion = promocion;
 	}
 
-	public int getPorcentajeAzucar() {
+	public double getPorcentajeAzucar() {
 		return porcentajeAzucar;
 	}
 

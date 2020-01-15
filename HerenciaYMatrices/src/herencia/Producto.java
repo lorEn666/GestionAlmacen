@@ -18,65 +18,24 @@ public abstract class Producto {
 		this.marca = marca;
 	}
 
-	public String getNombre() throws Exception {
-		Scanner leer = new Scanner(System.in);
-		System.out.println("Introduzca nombre del producto:");
-		return leer.nextLine();
+	public String getNombre() {
+		return nombre;
 	}
 
 	public String getIdentificador() {
 		return identificador;
 	}
 
-	public String getIdentificadorAt() throws Exception {
-		Scanner leer = new Scanner(System.in);
-		System.out.println("Introduzca código identificador del producto:");
-		return leer.nextLine();
-	}
-
-	public double getLitros() throws Exception {
-		Scanner leer = new Scanner(System.in);
-		System.out.println("Introduzca capacidad (litros) del producto:");
-		return leer.nextDouble();
+	public double getLitros() {
+		return litros;
 	}
 
 	public double getPrecio() {
 		return precio;
 	}
 
-	public double getPrecioAt() throws Exception {
-		Scanner leer = new Scanner(System.in);
-		System.out.println("Introduzca precio el producto:");
-		return leer.nextDouble();
-	}
-
-	public String getMarca() throws Exception {
-		Scanner leer = new Scanner(System.in);
-		System.out.println("Introduzca marca del producto:");
-		return leer.nextLine();
-	}
-
-	public String getOrigen() throws Exception {
-		Scanner leer = new Scanner(System.in);
-		System.out.println("Introduzca origen del agua:");
-		return leer.nextLine();
-	}
-
-	public int getPorcentajeDeAzucar() throws Exception {
-		Scanner leer = new Scanner(System.in);
-		System.out.println("Introduzca porcentaje de azúcar del producto:");
-		return leer.nextInt();
-	}
-
-	public boolean getPromocion() throws Exception {
-		Scanner leer = new Scanner(System.in);
-		System.out.println("¿El producto tiene promoción? (S/N)");
-		
-		if (leer.nextLine().toUpperCase().equals("S")) {
-			return true;
-		} else {
-			return false;
-		}
+	public String getMarca() {
+		return marca;
 	}
 
 	public void setNombre(String nombre) {
@@ -104,5 +63,4 @@ public abstract class Producto {
 		return "Nombre: " + nombre + " Identificador: " + identificador + " Litros: " + litros + " Precio: " + precio
 				+ " Marca: " + marca;
 	}
-
 }

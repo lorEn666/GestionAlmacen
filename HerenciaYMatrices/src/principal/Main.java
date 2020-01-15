@@ -26,12 +26,13 @@ public class Main {
 				case 5:
 					break;
 				case 6:
+					estante.mostrarInformacionDeLosProductos();
 					break;
 				case 7:
 					System.exit(0);
 				}
 			} catch (Exception e) {
-				System.err.println("Inserte un dato válido.");
+				System.err.println("Error. Inserte un dato válido.");
 			}
 		} while (true);
 	}
