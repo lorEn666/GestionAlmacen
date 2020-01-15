@@ -17,13 +17,16 @@ public class Main {
 					estante.calculaPrecioDeTodasLasBebidas();
 					break;
 				case 2:
+					estante.calculaPrecioDeUnaMarca();
 					break;
 				case 3:
+					estante.calculaPrecioDeUnaEstanteria();
 					break;
 				case 4:
 					estante.agregarProducto();
 					break;
 				case 5:
+					estante.eliminarProducto();
 					break;
 				case 6:
 					estante.mostrarInformacionDeLosProductos();

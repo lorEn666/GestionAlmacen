@@ -28,7 +28,42 @@ public class Almacen {
 			}
 		}
 
-		System.out.println(precioTotal);
+		System.out.println("El valor total de su almacén es: " + precioTotal + "€");
+	}
+
+	public void calculaPrecioDeUnaMarca() throws Exception {
+		Scanner leer = new Scanner(System.in);
+		String marca;
+		double valorMarca = 0;
+
+		System.out.println("¿De qué marca desea conocer su valor?");
+		marca = leer.nextLine().toUpperCase().trim();
+
+		for (int i = 0; i < mEstanteria.length; i++) {
+			for (int j = 0; j < mEstanteria[i].length; j++) {
+				if (mEstanteria[i][j] != null && mEstanteria[i][j].getMarca().toUpperCase().trim().equals(marca)) {
+					valorMarca += mEstanteria[i][j].getPrecio();
+				}
+			}
+		}
+		System.out.println("El valor de la marca " + marca + " almacenada en su almacén es de: " + valorMarca + "€");
+	}
+
+	public void calculaPrecioDeUnaEstanteria() throws Exception {
+		Scanner leer = new Scanner(System.in);
+		int columna;
+		double valorEstante = 0;
+
+		System.out.println("¿Qué estantería quiere consultar?");
+		columna = leer.nextInt();
+
+		for (int i = 0; i < mEstanteria.length; i++) {
+			if (mEstanteria[i][columna] != null) {
+				valorEstante += mEstanteria[i][columna].getPrecio();
+			}
+		}
+		System.out.println(
+				"El valor de los productos almacenados en la estantería " + columna + " es de: " + valorEstante + "€");
 	}
 
 	private boolean validaId(String id) {
@@ -120,16 +155,36 @@ public class Almacen {
 			if (tipoProducto.equals("BEBIDA")) {
 				registraBebida(id);
 			}
+			
 		} else {
 			System.err.println("Almacén lleno. No se pueden registrar más productos.");
 		}
+	}
+
+	public void eliminarProducto() throws Exception {
+		Scanner leer = new Scanner(System.in);
+		String id;
+
+		System.out.println("Inserte ID del producto que desea eliminar de su inventario:");
+		id = leer.nextLine();
+
+		for (int i = 0; i < mEstanteria.length; i++) {
+			for (int j = 0; j < mEstanteria[i].length; j++) {
+				if (mEstanteria[i][j] != null && mEstanteria[i][j].getIdentificador().equals(id)) {
+					mEstanteria[i][j] = null;
+					System.out.println("Producto eliminado con éxito.");
+					return;
+				}
+			}
+		}
+		System.err.println("No existe ningún producto en su almacén asociado a ese ID.");
 	}
 
 	public void mostrarInformacionDeLosProductos() {
 		for (int i = 0; i < mEstanteria.length; i++) {
 			for (int j = 0; j < mEstanteria[i].length; j++) {
 				if (mEstanteria[i][j] != null) {
-					System.out.println("Fila " + i + " Columna " + j + "\n" + mEstanteria[i][j]);
+					System.out.println("Fila " + i + " Columna " + j + "\n" + mEstanteria[i][j] + "\n");
 				}
 			}
 		}
