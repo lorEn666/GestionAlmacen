@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		int opc = 0;
+		int opc;
 		Almacen estante = new Almacen();
 		
 		do {

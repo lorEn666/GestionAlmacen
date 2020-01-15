@@ -155,7 +155,7 @@ public class Almacen {
 			if (tipoProducto.equals("BEBIDA")) {
 				registraBebida(id);
 			}
-			
+
 		} else {
 			System.err.println("Almacén lleno. No se pueden registrar más productos.");
 		}
